@@ -1,0 +1,3 @@
+I am a test file.
+I test a script. 
+Pass me as a command line arguement!

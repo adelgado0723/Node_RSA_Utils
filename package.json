@@ -1,0 +1,21 @@
+{
+  "name": "Node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "node-rsa": "^1.0.6",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "dotenv": "^8.1.0"
+  }
+}
