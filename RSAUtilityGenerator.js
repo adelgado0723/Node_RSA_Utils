@@ -53,7 +53,7 @@ module.exports = function getRSAUtils() {
   function decrypt(keyPath, inPath, outPath = "./decrypted.txt") {
     if (!keyPath) {
       console.log(
-        "Terminating Decryption: Path to public key was not provided"
+        "Terminating Decryption: Path to private key was not provided"
       );
       return;
     }
