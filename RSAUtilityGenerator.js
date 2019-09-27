@@ -28,7 +28,19 @@ module.exports = function getRSAUtils() {
     fs.writeFileSync(path.join(dir, "/private.pem"), privateKey, "utf-8");
   }
 
-  function encrypt(keyPath, inPath, outPath) {
+  function encrypt(keyPath, inPath, outPath = "./encrypted.txt") {
+    if (!keyPath) {
+      console.log(
+        "Terminating Encryption: Path to public key was not provided"
+      );
+      return;
+    }
+    if (!inPath) {
+      console.log(
+        "Terminating Encryption: Path to input file was not provided"
+      );
+      return;
+    }
     const inFile = fs.readFileSync(inPath, "utf8");
     const publicKeyFile = fs.readFileSync(keyPath, "utf8");
     const key = new NodeRSA(publicKeyFile, "public");
@@ -38,7 +50,19 @@ module.exports = function getRSAUtils() {
     fs.writeFileSync(outPath, encrypted, "utf-8");
   }
 
-  function decrypt(keyPath, inPath, outPath) {
+  function decrypt(keyPath, inPath, outPath = "./decrypted.txt") {
+    if (!keyPath) {
+      console.log(
+        "Terminating Decryption: Path to public key was not provided"
+      );
+      return;
+    }
+    if (!inPath) {
+      console.log(
+        "Terminating Decryption: Path to encrypted file was not provided"
+      );
+      return;
+    }
     const inFile = fs.readFileSync(inPath, "utf8");
     const privateKeyFile = fs.readFileSync(keyPath, "utf8");
     const key = new NodeRSA(privateKeyFile, "private");
